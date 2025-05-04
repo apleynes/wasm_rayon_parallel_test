@@ -22,21 +22,25 @@ fn main() {
 
     // let _ = wasm_bindgen_futures::JsFuture::from(init_thread_pool(8));
 
-    (0..1024).into_par_iter().for_each(|i| {
+    (0..3).into_par_iter().for_each(|i| {
         // log::info!("hi number {} from the parallel iterator thread {:?} using rayon", i, thread::current().id());
-        let mut i = i as f64;
-        for _ in 0..1024 {
-            i = i * 1.5;
+        // let mut i = i as f64;
+        // for _ in 0..3 {
+        //     i = i * 1.5;
+        // }
+        for j in 0..3 {
+            log::info!("hi number {} from the parallel iterator thread using rayon", (i + 1) * (j + 1));
+            // thread::sleep(Duration::from_millis(1));
         }
-        log::info!("hi number {} from the parallel iterator thread using rayon", i);
+        // log::info!("hi number {} from the parallel iterator thread using rayon", i);
         // thread::sleep(Duration::from_millis(1));
     });
 
-    [1, 2, 3].par_iter().for_each(|i| {
-        // log::info!("hi number {} from the parallel iterator thread {:?} using rayon", i, thread::current().id());
-        log::info!("hi number {} from the parallel iterator thread using rayon", i);
-        // thread::sleep(Duration::from_millis(1));
-    });
+    // [1, 2, 3].par_iter().for_each(|i| {
+    //     // log::info!("hi number {} from the parallel iterator thread {:?} using rayon", i, thread::current().id());
+    //     log::info!("hi number {} from the parallel iterator thread using rayon", i);
+    //     // thread::sleep(Duration::from_millis(1));
+    // });
 
     // let mut threads = vec![];
 
