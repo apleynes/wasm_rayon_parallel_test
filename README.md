@@ -1,3 +1,5 @@
+# Test to get wasm-bindgen-rayon to work
+
 # Web Workers with shared memory, using only a single WASM binary
 
 This is a port of the [wasm_threads `simple.rs` example](https://github.com/chemicstry/wasm_thread/tree/main?tab=readme-ov-file#simple).
